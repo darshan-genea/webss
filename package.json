@@ -1,0 +1,42 @@
+{
+  "name": "webss",
+  "version": "1.0.0",
+  "description": "API for taking screenshot of website",
+  "main": "bin/app.js",
+  "scripts": {
+    "start": "node bin/app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/iroguesniper/webss.git"
+  },
+  "keywords": [
+    "website",
+    "screenshot",
+    "webss",
+    "webpage",
+    "page",
+    "ss"
+  ],
+  "author": "iroguesniper@gmail.com <Darshan Patel>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/iroguesniper/webss/issues"
+  },
+  "homepage": "https://github.com/iroguesniper/webss#readme",
+  "devDependencies": {
+    "eslint": "^5.15.3",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.14.0"
+  },
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "joi": "^17.2.1",
+    "lodash": "^4.17.20",
+    "puppeteer": "^5.3.0",
+    "server-destroy": "^1.0.1",
+    "winston": "^3.3.3"
+  }
+}
