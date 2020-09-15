@@ -14,7 +14,7 @@ const extractOptions = ({ req }) => {
     const url = req.params[0]
     const { width, height } = req.query
 
-    container.url = url
+    container.url = url.startsWith('http') ? url : `https://${url}`
     container.width = !Number.isNaN(parseInt(width, 10)) ? parseInt(width, 10) : null
     container.height = !Number.isNaN(parseInt(height, 10)) ? parseInt(height, 10) : null
     if (container.width > maxWidth || !width) container.width = maxWidth
