@@ -3,6 +3,9 @@ const Application = require('./app')
 const webSS = require('./services/webss')
 const logger = require('./helpers/logger')
 
+/**
+ * Load config
+ */
 require('dotenv').config()
 
 /**
@@ -22,6 +25,7 @@ module.exports = () => {
      * @returns {Promise<void>}
      */
     const start = async () => {
+        logger.info('starting application')
         logger.info('starting browser')
         await webSS.launchBrowser()
 
@@ -38,9 +42,18 @@ module.exports = () => {
      * @returns {Promise<void>}
      */
     const stop = async () => {
+        logger.info('stoping application')
         if (isAppClosing) return
         isAppClosing = true
+        /**
+         * Stop server
+         */
+        logger.info('stopping server')
         if (server) await server.stop()
+        /**
+         * Close browser
+         */
+        logger.info('closing browser')
         await webSS.closeBrowser()
     }
 
