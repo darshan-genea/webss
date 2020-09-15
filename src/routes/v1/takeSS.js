@@ -1,17 +1,7 @@
 const webSS = require('../../services/webss/')
 
-/**
- * Convert base64 URL to normal string URL
- * @param base64URL
- * @returns {string}
- */
-const transformURL = ({ base64URL }) => {
-    const urlBuffer = Buffer.from(base64URL, 'base64')
-    let URL = urlBuffer.toString('utf8')
-    if (!URL.startsWith('http')) URL = `https://${URL}`
-
-    return URL
-}
+const maxWidth = process.env.MAX_WIDTH || 1200
+const maxHeight = process.env.MAX_HEIGHT || 1400
 
 /**
  * Extract valid options from request
@@ -21,14 +11,14 @@ const transformURL = ({ base64URL }) => {
 const extractOptions = ({ req }) => {
     const container = {}
 
-    const { url: base64URL } = req.params
+    const url = req.params[0]
     const { width, height } = req.query
 
-    container.url = transformURL({ base64URL })
+    container.url = url
     container.width = !Number.isNaN(parseInt(width, 10)) ? parseInt(width, 10) : null
     container.height = !Number.isNaN(parseInt(height, 10)) ? parseInt(height, 10) : null
-    if (container.width > 3000) container.width = 3000
-    if (container.height > 3000) container.height = 3000
+    if (container.width > maxWidth || !width) container.width = maxWidth
+    if (container.height > maxHeight || !height) container.height = maxHeight
 
     return container
 }

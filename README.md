@@ -14,9 +14,9 @@
 - npm start
 
 ### Test installation
-- convert the URL you want to screenshot to base64 https://www.base64encode.org/ 
-- Example - youtube.com => eW91dHViZS5jb20=
-- open http://localhost:8080/v1/screenshot/eW91dHViZS5jb20= in your browser
+- open `v1/screenshot/{websiteURL}` in your browser
+- Example - http://localhost:8080/v1/screenshot/www.google.com
+
 
 ## Routes
 
