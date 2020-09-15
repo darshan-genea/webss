@@ -1,4 +1,4 @@
-# webss - Website screenshot API
+# WebSS - Website screenshot API
 
 ## Installations
 ### Requirements
@@ -7,13 +7,15 @@
 
 ### Steps
 - git clone https://github.com/iroguesniper/webss.git or download https://github.com/iroguesniper/webss/archive/master.zip and extract
+- open terminal/cmd and navigate to repo folder
 - cd webss
 - npm install
 - copy .env.example with .env and make required changes (Will work without any changes)
 - npm start
 
 ### Test installation
-- convert the URL you want to screenshot to base64 https://www.base64encode.org/ Example - youtube.com => eW91dHViZS5jb20=
+- convert the URL you want to screenshot to base64 https://www.base64encode.org/ 
+- Example - youtube.com => eW91dHViZS5jb20=
 - open http://localhost:8080/v1/screenshot/eW91dHViZS5jb20= in your browser
 
 ## Routes
