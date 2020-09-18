@@ -20,7 +20,7 @@
 
 ## Routes
 
-[GET] - /v1/screenshot/:base64EncodedURL?width=1920&height=1080 (Max width/height = 3000) 
+[GET] - /v1/screenshot/:{websiteURL}?width=1920&height=1080 (Max width/height = 3000) 
 
 ## TODO
 - [x] Basic initial code
